@@ -1,4 +1,4 @@
-package com.data.api.okex.websocket;
+package com.data.api.okex.websocket.model;
 
 import java.util.List;
 

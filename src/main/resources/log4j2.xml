@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--不记录本身日志-->
+<configuration status="error">
+
+    <!--先定义所有的appender-->
+    <appenders>
+        <!--这个输出控制台的配置-->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+            <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
+            <!--这个都知道是输出日志的格式-->
+            <PatternLayout pattern="%m%n"/>
+        </Console>
+
+        <!--&lt;!&ndash;Candle60&ndash;&gt;-->
+        <!--<RollingFile-->
+                <!--name="EOS-USDT-CANDLE60"-->
+                <!--fileName="${sys:user.home}/log/EOS-USDT-CANDLE60/data.log"-->
+                <!--filePattern="${sys:user.home}/log/EOS-USDT-CANDLE60/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="BTC-USDT-CANDLE60"-->
+                <!--fileName="${sys:user.home}/log/BTC-USDT-CANDLE60/data.log"-->
+                <!--filePattern="${sys:user.home}/log/BTC-USDT-CANDLE60/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="ETH-USDT-CANDLE60"-->
+                <!--fileName="${sys:user.home}/log/ETH-USDT-CANDLE60/data.log"-->
+                <!--filePattern="${sys:user.home}/log/ETH-USDT-CANDLE60/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="BCH-USDT-CANDLE60"-->
+                <!--fileName="${sys:user.home}/log/BCH-USDT-CANDLE60/data.log"-->
+                <!--filePattern="${sys:user.home}/log/BCH-USDT-CANDLE60/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="LTC-USDT-CANDLE60"-->
+                <!--fileName="${sys:user.home}/log/LTC-USDT-CANDLE60/data.log"-->
+                <!--filePattern="${sys:user.home}/log/LTC-USDT-CANDLE60/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+
+
+        <!--&lt;!&ndash;trade&ndash;&gt;-->
+        <!--<RollingFile-->
+                <!--name="EOS-USDT-TRADE"-->
+                <!--fileName="${sys:user.home}/log/EOS-USDT-TRADE/data.log"-->
+                <!--filePattern="${sys:user.home}/log/EOS-USDT-TRADE/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="BTC-USDT-TRADE"-->
+                <!--fileName="${sys:user.home}/log/BTC-USDT-TRADE/data.log"-->
+                <!--filePattern="${sys:user.home}/log/BTC-USDT-TRADE/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="ETH-USDT-TRADE"-->
+                <!--fileName="${sys:user.home}/log/ETH-USDT-TRADE/data.log"-->
+                <!--filePattern="${sys:user.home}/log/ETH-USDT-TRADE/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="BCH-USDT-TRADE"-->
+                <!--fileName="${sys:user.home}/log/BCH-USDT-TRADE/data.log"-->
+                <!--filePattern="${sys:user.home}/log/BCH-USDT-TRADE/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="LTC-USDT-TRADE"-->
+                <!--fileName="${sys:user.home}/log/LTC-USDT-TRADE/data.log"-->
+                <!--filePattern="${sys:user.home}/log/LTC-USDT-TRADE/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+
+        <!--&lt;!&ndash;TICKER&ndash;&gt;-->
+        <!--<RollingFile-->
+                <!--name="EOS-USDT-TICKER"-->
+                <!--fileName="${sys:user.home}/log/EOS-USDT-TICKER/data.log"-->
+                <!--filePattern="${sys:user.home}/log/EOS-USDT-TICKER/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="BTC-USDT-TICKER"-->
+                <!--fileName="${sys:user.home}/log/BTC-USDT-TICKER/data.log"-->
+                <!--filePattern="${sys:user.home}/log/BTC-USDT-TICKER/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="ETH-USDT-TICKER"-->
+                <!--fileName="${sys:user.home}/log/ETH-USDT-TICKER/data.log"-->
+                <!--filePattern="${sys:user.home}/log/ETH-USDT-TICKER/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="BCH-USDT-TICKER"-->
+                <!--fileName="${sys:user.home}/log/BCH-USDT-TICKER/data.log"-->
+                <!--filePattern="${sys:user.home}/log/BCH-USDT-TICKER/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="LTC-USDT-TICKER"-->
+                <!--fileName="${sys:user.home}/log/LTC-USDT-TICKER/data.log"-->
+                <!--filePattern="${sys:user.home}/log/LTC-USDT-TICKER/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+
+        <!--&lt;!&ndash;DEPTH5&ndash;&gt;-->
+        <!--<RollingFile-->
+                <!--name="EOS-USDT-DEPTH5"-->
+                <!--fileName="${sys:user.home}/log/EOS-USDT-DEPTH5/data.log"-->
+                <!--filePattern="${sys:user.home}/log/EOS-USDT-DEPTH5/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="BTC-USDT-DEPTH5"-->
+                <!--fileName="${sys:user.home}/log/BTC-USDT-DEPTH5/data.log"-->
+                <!--filePattern="${sys:user.home}/log/BTC-USDT-DEPTH5/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="ETH-USDT-DEPTH5"-->
+                <!--fileName="${sys:user.home}/log/ETH-USDT-DEPTH5/data.log"-->
+                <!--filePattern="${sys:user.home}/log/ETH-USDT-DEPTH5/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="BCH-USDT-DEPTH5"-->
+                <!--fileName="${sys:user.home}/log/BCH-USDT-DEPTH5/data.log"-->
+                <!--filePattern="${sys:user.home}/log/BCH-USDT-DEPTH5/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="LTC-USDT-DEPTH5"-->
+                <!--fileName="${sys:user.home}/log/LTC-USDT-DEPTH5/data.log"-->
+                <!--filePattern="${sys:user.home}/log/LTC-USDT-DEPTH5/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+
+        <!--交割合约币本位400深度-->
+        <RollingFile
+                name="BTC-USD-FUTURES-DEPTH"
+                fileName="${sys:user.home}/log/BTC-USD-FUTURES-DEPTH/data.log"
+                filePattern="${sys:user.home}/log/BTC-USD-FUTURES-DEPTH/data-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy
+                        modulate="true"
+                        interval="1"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile
+                name="EOS-USD-FUTURES-DEPTH"
+                fileName="${sys:user.home}/log/EOS-USD-FUTURES-DEPTH/data.log"
+                filePattern="${sys:user.home}/log/EOS-USD-FUTURES-DEPTH/data-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy
+                        modulate="true"
+                        interval="1"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile
+                name="BCH-USD-FUTURES-DEPTH"
+                fileName="${sys:user.home}/log/BCH-USD-FUTURES-DEPTH/data.log"
+                filePattern="${sys:user.home}/log/BCH-USD-FUTURES-DEPTH/data-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy
+                        modulate="true"
+                        interval="1"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile
+                name="ETH-USD-FUTURES-DEPTH"
+                fileName="${sys:user.home}/log/ETH-USD-FUTURES-DEPTH/data.log"
+                filePattern="${sys:user.home}/log/ETH-USD-FUTURES-DEPTH/data-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy
+                        modulate="true"
+                        interval="1"/>
+            </Policies>
+        </RollingFile>
+
+        <!--交割合约币本位Ticker-->
+        <RollingFile
+                name="BTC-USD-FUTURES-TICKER"
+                fileName="${sys:user.home}/log/BTC-USD-FUTURES-TICKER/data.log"
+                filePattern="${sys:user.home}/log/BTC-USD-FUTURES-TICKER/data-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy
+                        modulate="true"
+                        interval="1"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile
+                name="EOS-USD-FUTURES-TICKER"
+                fileName="${sys:user.home}/log/EOS-USD-FUTURES-TICKER/data.log"
+                filePattern="${sys:user.home}/log/EOS-USD-FUTURES-TICKER/data-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy
+                        modulate="true"
+                        interval="1"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile
+                name="BCH-USD-FUTURES-TICKER"
+                fileName="${sys:user.home}/log/BCH-USD-FUTURES-TICKER/data.log"
+                filePattern="${sys:user.home}/log/BCH-USD-FUTURES-TICKER/data-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy
+                        modulate="true"
+                        interval="1"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile
+                name="ETH-USD-FUTURES-TICKER"
+                fileName="${sys:user.home}/log/ETH-USD-FUTURES-TICKER/data.log"
+                filePattern="${sys:user.home}/log/ETH-USD-FUTURES-TICKER/data-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy
+                        modulate="true"
+                        interval="1"/>
+            </Policies>
+        </RollingFile>
+
+        <!--交易记录-->
+        <RollingFile
+                name="BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LEVEL1"
+                fileName="${sys:user.home}/log/trade-trace/BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LEVEL1/data.log"
+                filePattern="${sys:user.home}/log/trade-trace/BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LEVEL1/data-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy
+                        modulate="true"
+                        interval="1"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile
+                name="BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LEVEL2"
+                fileName="${sys:user.home}/log/trade-trace/BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LEVEL2/data.log"
+                filePattern="${sys:user.home}/log/trade-trace/BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LEVEL2/data-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy
+                        modulate="true"
+                        interval="1"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile
+                name="BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LEVEL3"
+                fileName="${sys:user.home}/log/trade-trace/BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LEVEL3/data.log"
+                filePattern="${sys:user.home}/log/trade-trace/BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LEVEL3/data-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy
+                        modulate="true"
+                        interval="1"/>
+            </Policies>
+        </RollingFile>
+
+        <!--<RollingFile-->
+                <!--name="EOS-USD-FUTURES-TRADE-BIGDEAL-STRATEGY"-->
+                <!--fileName="${sys:user.home}/log/trade-trace/EOS-USD-FUTURES-TRADE-BIGDEAL-STRATEGY/data.log"-->
+                <!--filePattern="${sys:user.home}/log/trade-trace/EOS-USD-FUTURES-TRADE-BIGDEAL-STRATEGY/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} - %m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="BCH-USD-FUTURES-TRADE-BIGDEAL-STRATEGY"-->
+                <!--fileName="${sys:user.home}/log/trade-trace/BCH-USD-FUTURES-TRADE-BIGDEAL-STRATEGY/data.log"-->
+                <!--filePattern="${sys:user.home}/log/trade-trace/BCH-USD-FUTURES-TRADE-BIGDEAL-STRATEGY/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} - %m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+        <!--<RollingFile-->
+                <!--name="ETH-USD-FUTURES-TRADE-BIGDEAL-STRATEGY"-->
+                <!--fileName="${sys:user.home}/log/trade-trace/ETH-USD-FUTURES-TRADE-BIGDEAL-STRATEGY/data.log"-->
+                <!--filePattern="${sys:user.home}/log/trade-trace/ETH-USD-FUTURES-TRADE-BIGDEAL-STRATEGY/data-%d{yyyy-MM-dd}.log.gz">-->
+            <!--<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} - %m%n"/>-->
+            <!--<Policies>-->
+                <!--<TimeBasedTriggeringPolicy-->
+                        <!--modulate="true"-->
+                        <!--interval="1"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+
+    </appenders>
+
+
+    <loggers>
+        <!--CANDLE60-->
+        <!--<Logger-->
+                <!--name="EOS-USDT-CANDLE60-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="EOS-USDT-CANDLE60"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="BTC-USDT-CANDLE60-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="BTC-USDT-CANDLE60"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="ETH-USDT-CANDLE60-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="ETH-USDT-CANDLE60"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="BCH-USDT-CANDLE60-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="BCH-USDT-CANDLE60"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="LTC-USDT-CANDLE60-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="LTC-USDT-CANDLE60"/>-->
+        <!--</Logger>-->
+
+        <!--&lt;!&ndash;TRADE&ndash;&gt;-->
+        <!--<Logger-->
+                <!--name="EOS-USDT-TRADE-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="EOS-USDT-TRADE"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="BTC-USDT-TRADE-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="BTC-USDT-TRADE"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="ETH-USDT-TRADE-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="ETH-USDT-TRADE"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="BCH-USDT-TRADE-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="BCH-USDT-TRADE"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="LTC-USDT-TRADE-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="LTC-USDT-TRADE"/>-->
+        <!--</Logger>-->
+
+        <!--&lt;!&ndash;TICKER&ndash;&gt;-->
+        <!--<Logger-->
+                <!--name="EOS-USDT-TICKER-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="EOS-USDT-TICKER"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="BTC-USDT-TICKER-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="BTC-USDT-TICKER"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="ETH-USDT-TICKER-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="ETH-USDT-TICKER"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="BCH-USDT-TICKER-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="BCH-USDT-TICKER"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="LTC-USDT-TICKER-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="LTC-USDT-TICKER"/>-->
+        <!--</Logger>-->
+
+        <!--&lt;!&ndash;DEPTH5&ndash;&gt;-->
+        <!--<Logger-->
+                <!--name="EOS-USDT-DEPTH5-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="EOS-USDT-DEPTH5"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="BTC-USDT-DEPTH5-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="BTC-USDT-DEPTH5"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="ETH-USDT-DEPTH5-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="ETH-USDT-DEPTH5"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="BCH-USDT-DEPTH5-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="BCH-USDT-DEPTH5"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="LTC-USDT-DEPTH5-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="LTC-USDT-DEPTH5"/>-->
+        <!--</Logger>-->
+
+        <!--交割合约币本位400深度-->
+        <Logger
+                name="BTC-USD-FUTURES-DEPTH-LOGGER"
+                additivity="false"
+                level="trace">
+            <appender-ref ref="BTC-USD-FUTURES-DEPTH"/>
+        </Logger>
+        <Logger
+                name="EOS-USD-FUTURES-DEPTH-LOGGER"
+                additivity="false"
+                level="trace">
+            <appender-ref ref="EOS-USD-FUTURES-DEPTH"/>
+        </Logger>
+        <Logger
+                name="BCH-USD-FUTURES-DEPTH-LOGGER"
+                additivity="false"
+                level="trace">
+            <appender-ref ref="BCH-USD-FUTURES-DEPTH"/>
+        </Logger>
+        <Logger
+                name="ETH-USD-FUTURES-DEPTH-LOGGER"
+                additivity="false"
+                level="trace">
+            <appender-ref ref="ETH-USD-FUTURES-DEPTH"/>
+        </Logger>
+
+        <!--交割合约币本位TICKER-->
+        <Logger
+                name="BTC-USD-FUTURES-TICKER-LOGGER"
+                additivity="false"
+                level="trace">
+            <appender-ref ref="BTC-USD-FUTURES-TICKER"/>
+        </Logger>
+        <Logger
+                name="EOS-USD-FUTURES-TICKER-LOGGER"
+                additivity="false"
+                level="trace">
+            <appender-ref ref="EOS-USD-FUTURES-TICKER"/>
+        </Logger>
+        <Logger
+                name="BCH-USD-FUTURES-TICKER-LOGGER"
+                additivity="false"
+                level="trace">
+            <appender-ref ref="BCH-USD-FUTURES-TICKER"/>
+        </Logger>
+        <Logger
+                name="ETH-USD-FUTURES-TICKER-LOGGER"
+                additivity="false"
+                level="trace">
+            <appender-ref ref="ETH-USD-FUTURES-TICKER"/>
+        </Logger>
+
+        <!--交易记录-->
+        <Logger
+                name="BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LOGGER-LEVEL1"
+                additivity="false"
+                level="trace">
+            <appender-ref ref="BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LEVEL1"/>
+        </Logger>
+        <Logger
+                name="BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LOGGER-LEVEL2"
+                additivity="false"
+                level="trace">
+            <appender-ref ref="BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LEVEL2"/>
+        </Logger>
+        <Logger
+                name="BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LOGGER-LEVEL3"
+                additivity="false"
+                level="trace">
+            <appender-ref ref="BTC-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LEVEL3"/>
+        </Logger>
+        <!--<Logger-->
+                <!--name="EOS-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="EOS-USD-FUTURES-TRADE-BIGDEAL-STRATEGY"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="BCH-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="BCH-USD-FUTURES-TRADE-BIGDEAL-STRATEGY"/>-->
+        <!--</Logger>-->
+        <!--<Logger-->
+                <!--name="ETH-USD-FUTURES-TRADE-BIGDEAL-STRATEGY-LOGGER"-->
+                <!--additivity="false"-->
+                <!--level="trace">-->
+            <!--<appender-ref ref="ETH-USD-FUTURES-TRADE-BIGDEAL-STRATEGY"/>-->
+        <!--</Logger>-->
+
+        <!--建立一个默认的root的logger-->
+        <root level="trace">
+            <appender-ref ref="Console"/>
+        </root>
+    </loggers>
+</configuration>
